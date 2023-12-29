@@ -9,6 +9,17 @@ let getMovie = () => {
   // Template URL for fetching movie name and API key for OMDb
   let url = `http://www.omdbapi.com/?t=${movieName}&apikey=${key}`;
 
+  // Function to allow "Enter" key press
+  let handleKeyPress = (event) => {
+    // Key code for "Enter" key is 13
+    if (event.keyCode === 13) {
+      getMovie(); // Call the getMovie function when Enter is pressed
+    }
+  };
+
+  // Eventlistener to the input field for key press
+  movieNameRef.addEventListener("keypress", handleKeyPress);
+
   // If the input field is empty
   if (movieName.length <= 0) {
     result.innerHTML = `<h3 class="msg">Please enter a movie, show or anime name </h3>`;
