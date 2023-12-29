@@ -7,7 +7,7 @@ let result = document.getElementById("result");
 let getMovie = () => {
   let movieName = movieNameRef.value;
   // Template URL for fetching movie name and API key for OMDb
-  let url = `http://www.omdbapi.com/?t=${movieName}&apikey=${key}`;
+  let url = `https://www.omdbapi.com/?t=${movieName}&apikey=${key}`;
 
   // Function to allow "Enter" key press
   let handleKeyPress = (event) => {
